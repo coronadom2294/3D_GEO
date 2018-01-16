@@ -1,14 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
     <head>
-
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Stereonet - Visible Geology</title>
         <script type="text/javascript" src="build/SNet.js"></script>
         <script>
         var snet;
+        $(document).ready(function() {
+                var planes = [];
+                for (var i = 0; i < 360; i+=60) {
+                    planes.push(new VG.SNetPlane(i,40));
+                };
 
+                snet = new VG.SNetManager(planes);
+
+                var c = new Contact("Stereonet");
+                c.makeFeedback();
+        });
         </script>
-
         <style type="text/css">
 
             #container{
