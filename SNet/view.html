@@ -1,25 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="description" content="An online stereonet application that allows you to create and view all of your geologic stereonet information in 3D. Visible Geology runs in the browser so there is no need to download anything, just click to add lines and double click to add planes.">
-        <meta name="keywords" content="Stereonet, Online Stereonet, Stereonet Program, Stereonet Application, Stereonet Geology, Geology, SVG, Visible Geology, Rowan Cockett">
 
         <title>Stereonet - Visible Geology</title>
         <script type="text/javascript" src="build/SNet.js"></script>
         <script>
         var snet;
-        $(document).ready(function() {
-                var planes = [];
-                for (var i = 0; i < 360; i+=60) {
-                    planes.push(new VG.SNetPlane(i,40));
-                };
 
-                snet = new VG.SNetManager(planes);
-
-                var c = new Contact("Stereonet");
-                c.makeFeedback();
-        });
         </script>
 
         <style type="text/css">
@@ -140,8 +127,7 @@
         <div id="button3D" class="buttonBottom">3D</div>
         <div id="buttonSVG" class="buttonTop">SVG</div>
         <div id="buttonSave" class="buttonTop">Save</div>
-        <div style="position:absolute;bottom:2px;left:5px;z-index:10;"><a href="http://app.visiblegeology.com" target="_blank"><img src="img/logo.gif" height="40px" border="0"></a></div>
-        <script>
+       <script>
             window._gaq = [['_setAccount','UA-25310626-1'],['_trackPageview'],['_trackPageLoadTime']];
             Modernizr.load({
             load: ('https:' == location.protocol ? '//ssl' : 'http://www') + '.google-analytics.com/ga.js'
